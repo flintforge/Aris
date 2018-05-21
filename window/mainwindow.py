@@ -1,11 +1,15 @@
+'''
+ARIS
+Author:  𝓟𝓱𝓲𝓵.𝓔𝓼𝓽𝓲𝓿𝓪𝓵  @ 𝓕𝓻𝓮𝓮.𝓯𝓻
+Date:<2018-05-18 15:52:50>
+Released under the MIT License
+'''
 
 import os
 import system
 import pyglet, sys
 from pyglet.window import Window
 from pyglet import image
-from filewatcher import FileWatcher
-from fileevents import *
 
 '''
 really needs the lose focus event
