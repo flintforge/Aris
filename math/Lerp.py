@@ -16,7 +16,6 @@ import equation
 # c : change(start-end)
 # d : duration
 
-running = True
 
 # the default thread frequency (w/o computing time)
 Hz60 = 0.016666
@@ -28,6 +27,7 @@ class Clock(threading.Thread):
     '''
     Time = 0
     running = True
+
     def __init__(_):
         threading.Thread.__init__(_)
         # _._stopevent = threading.Event( ) # not on windows. It's heavy
@@ -35,22 +35,28 @@ class Clock(threading.Thread):
         _.start()
 
     def run(_):
-        while _.running:
+        while Clock.running:
             Clock.Time = time.time()
             time.sleep(0.001)
 
     @staticmethod
     def stop(): Clock.running = False
 
+    def __del__(_):
+        Clock.stop() # todo : check
 
+
+# don't forget to stop it when exiting the main loop
 clock = Clock()
-# !! don't forget to stop it when exiting the main loop !!
+
 
 
 class Lerp(threading.Thread):
 
     # gonna need a merge struct over kwargs on that one
-    def __init__(_,x,equation=equation.linear,
+    def __init__(_,
+                 x,
+                 equation=equation.linear,
                  start=0,
                  end=1.0,
                  duration=1.0,
@@ -123,7 +129,6 @@ class Lerp(threading.Thread):
 
 class Lerpf(threading.Thread):
 
-    # gonna need a merge struct over kwargs on that one
     def __init__(_,
                  x=[0],
                  func=lambda x :None,
@@ -219,7 +224,7 @@ class Lerpf(threading.Thread):
 
 
 
-# please don't confuse witht the CLASS
+# try to not confuse with the CLASS
 def lerp(
     x=[0],
     func=lambda x :None,
