@@ -12,9 +12,10 @@ logger = debuglog.init(__name__)
 
 FileEventQueue = Queue()
 
+'''
 def reverseLookDict(dico, item):
     return list(dico.keys())[list(dico.values()).index(item)]
-
+'''
 
 def FileEventQHandler(resources, obj):
     """
