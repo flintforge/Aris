@@ -6,11 +6,11 @@ Released under the MIT License
 '''
 
 from .filemembers import *
-from queue import Empty, Queue
+import queue
 import debuglog
 logger = debuglog.init(__name__)
 
-FileEventQueue = Queue()
+FileEventQueue = queue.Queue()
 
 '''
 def reverseLookDict(dico, item):
@@ -25,7 +25,7 @@ def FileEventQHandler(resources, obj):
 
     try:
         event = FileEventQueue.get_nowait()
-    except Empty:
+    except queue.Empty:
         pass
     else:
         file = event.src_path  # manage only watchdog.events.FileModifiedEvent for now
