@@ -19,7 +19,8 @@ def reverseLookDict(dico, item):
 
 def FileEventQHandler(resources, obj):
     """
-    among those, are events which need to be triggered into the gl active context.
+    among those,
+    are events which need to be triggered into the gl active context.
     files are indexed by name (which is wrong and ask for a path cut)
     """
 
