@@ -18,6 +18,7 @@ class Vec2:
     def __iter__(_):
         return iter((_.x, _.y))
 
+
 class Vec3:
     def __init__(_, x=0, y=0, z=0):
         _.x = float(x)
