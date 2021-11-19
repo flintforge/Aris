@@ -40,7 +40,7 @@ reverse lookup the key from the dict :
 slot = reverseLookDict(resources, file)
 Resource.TypedFactory(obj.__dict__[slot],file)
 
-The attribute will be automagically updated/rebuilded when the file gets modified.
+The attribute will be automagically updated/rebuild when the file gets modified.
 ace.
 
 '''
